@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+        }
+
+        /* ---------- NAVBAR ---------- */
+        .navbar {
+            background: #2e7d32;
+            color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h2 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------- CONTENT ---------- */
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+            color: #2c3e50;
+        }
+
+        .grid {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 300px !important;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: #1b5e20;
+            color: #ccc;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>AgroVision</h2>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="notification.html">Notification</a>
+        <a href="soilcrop.html">Soil & Crop</a>
+        <a href="scheme.html">Government Scheme</a>
+        <a href="graph.html">Predicted Graph</a>
+        <a href="profile.html">Profile</a>
+        <a href="other.html">Others</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<h1>Prediction & Analytics Dashboard</h1>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>Rainfall Prediction (mm)</h3>
+        <canvas id="rainfallChart"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Temperature Forecast (°C)</h3>
+        <canvas id="temperatureChart"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Crop Yield Prediction (tons)</h3>
+        <canvas id="cropChart"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Water Requirement Forecast (litres)</h3>
+        <canvas id="waterChart"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Soil Fertility Levels</h3>
+        <canvas id="soilChart"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Weather Probability</h3>
+        <canvas id="weatherChart"></canvas>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 AgroVision | All Rights Reserved
+</footer>
+
+<script>
+    new Chart(rainfallChart, {
+        type: 'line',
+        data: {
+            labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+            datasets: [{
+                label: 'Rainfall',
+                data: [40,55,70,90,120,150],
+                borderColor: '#3498db',
+                backgroundColor: 'rgba(52,152,219,0.2)',
+                fill: true,
+                tension: 0.4
+            }]
+        }
+    });
+
+    new Chart(temperatureChart, {
+        type: 'line',
+        data: {
+            labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+            datasets: [{
+                label: 'Temperature',
+                data: [18,22,28,34,38,36],
+                borderColor: '#e74c3c',
+                backgroundColor: 'rgba(231,76,60,0.2)',
+                fill: true,
+                tension: 0.4
+            }]
+        }
+    });
+
+    new Chart(cropChart, {
+        type: 'bar',
+        data: {
+            labels: ['Wheat','Rice','Corn','Soybean'],
+            datasets: [{
+                label: 'Yield',
+                data: [12,18,10,8],
+                backgroundColor: ['#2ecc71','#27ae60','#f1c40f','#16a085']
+            }]
+        }
+    });
+
+    new Chart(waterChart, {
+        type: 'line',
+        data: {
+            labels: ['Week 1','Week 2','Week 3','Week 4'],
+            datasets: [{
+                label: 'Water',
+                data: [2000,2600,3000,3500],
+                borderColor: '#1abc9c',
+                tension: 0.4
+            }]
+        }
+    });
+
+    new Chart(soilChart, {
+        type: 'doughnut',
+        data: {
+            labels: ['High','Medium','Low'],
+            datasets: [{
+                data: [45,35,20],
+                backgroundColor: ['#27ae60','#f39c12','#c0392b']
+            }]
+        }
+    });
+
+    new Chart(weatherChart, {
+        type: 'pie',
+        data: {
+            labels: ['Sunny','Rainy','Cloudy'],
+            datasets: [{
+                data: [50,30,20],
+                backgroundColor: ['#f1c40f','#3498db','#95a5a6']
+            }]
+        }
+    });
+</script>
+
+</body>
+</html>

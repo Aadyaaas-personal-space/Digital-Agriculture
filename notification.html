@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications | AgriApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f4f8f4;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #2e7d32;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .container h2 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .container p {
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        /* NOTIFICATION CARDS */
+        .notification-card {
+            background-color: #ffffff;
+            border-left: 6px solid #2e7d32;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .notification-card h3 {
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+
+        .notification-card span {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .notification-card p {
+            margin-top: 10px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #2e7d32;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <h1>AgroVision</h1>
+        <ul>
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="notification.html">Notification</a></li>
+        <li class="nav-item"><a class="nav-link" href="soilcrop.html">Soil & Crop</a></li>
+        <li class="nav-item"><a class="nav-link" href="scheme.html">Govt Scheme</a></li>
+        <li class="nav-item"><a class="nav-link" href="graph.html">Predicted Graph</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="other.html">Others</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <h2>Government Circulations for Farmers</h2>
+        <p>
+            Stay updated with the latest official announcements, schemes, and advisories
+            released by the government for the benefit of farmers.
+        </p>
+
+        <div class="notification-card">
+    <h3>Weather Alert: Heavy Rainfall Expected</h3>
+    <span>IMD Advisory | Next 48 Hours</span>
+    <p>
+        Heavy to very heavy rainfall is expected in several agricultural regions.
+        Farmers are advised to postpone harvesting activities and ensure proper
+        drainage to prevent waterlogging in fields.
+    </p>
+</div>
+
+<div class="notification-card">
+    <h3>Market Rate Increase: Soybean & Cotton</h3>
+    <span>Agricultural Market Update</span>
+    <p>
+        The market price of Soybean and Cotton has increased by 6–8% in major mandis.
+        Farmers planning to sell are advised to check nearby market rates for better returns.
+    </p>
+</div>
+
+<div class="notification-card">
+    <h3>Weather Advisory: Heatwave Alert</h3>
+    <span>IMD Warning</span>
+    <p>
+        A heatwave is likely to affect crop growth in the coming days. Farmers are
+        advised to increase irrigation frequency and avoid daytime spraying of fertilizers.
+    </p>
+</div>
+
+<div class="notification-card">
+    <h3>Market Rate Decrease: Onion Prices Drop</h3>
+    <span>Market Intelligence Report</span>
+    <p>
+        Onion prices have decreased due to increased supply in major markets.
+        Farmers are advised to store produce safely or delay selling if possible.
+    </p>
+</div>
+
+<div class="notification-card">
+    <h3>Pest Alert: Fall Armyworm Detected</h3>
+    <span>Crop Protection Advisory</span>
+    <p>
+        Fall Armyworm infestation has been reported in maize-growing regions.
+        Farmers are advised to monitor crops closely and follow recommended control measures.
+    </p>
+</div>
+
+<div class="notification-card">
+    <h3>Weather Alert: Frost Risk in Northern Regions</h3>
+    <span>Seasonal Weather Update</span>
+    <p>
+        There is a risk of frost during early morning hours. Farmers should use
+        protective irrigation methods and cover sensitive crops to minimize damage.
+    </p>
+</div>
+
+
+        <div class="notification-card">
+            <h3>PM-KISAN Scheme – Installment Release</h3>
+            <span>Issued by Ministry of Agriculture | Feb 2026</span>
+            <p>
+                The next installment under the PM-KISAN scheme will be credited directly
+                to eligible farmers’ bank accounts. Farmers are advised to verify their
+                Aadhaar and bank details to avoid delays.
+            </p>
+        </div>
+
+        <div class="notification-card">
+            <h3>Crop Insurance Enrollment Deadline</h3>
+            <span>Issued by Government of India</span>
+            <p>
+                Farmers are informed that the last date to enroll in the Pradhan Mantri
+                Fasal Bima Yojana (PMFBY) for the upcoming season is approaching. Ensure
+                timely registration to secure crop insurance benefits.
+            </p>
+        </div>
+
+        <div class="notification-card">
+            <h3>Subsidy on Drip & Sprinkler Irrigation</h3>
+            <span>Issued by State Agriculture Department</span>
+            <p>
+                A new subsidy has been announced for farmers adopting micro-irrigation
+                systems such as drip and sprinkler irrigation to promote water conservation
+                and increase crop productivity.
+            </p>
+        </div>
+
+        <div class="notification-card">
+            <h3>Soil Health Card Update Notice</h3>
+            <span>Issued by Department of Agriculture</span>
+            <p>
+                Farmers are requested to update their Soil Health Card details at the
+                nearest agriculture office. Updated soil reports will help in better
+                crop planning and fertilizer usage.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 AgroVision | Empowering Farmers with Smart Agriculture
+    </footer>
+
+</body>
+</html>

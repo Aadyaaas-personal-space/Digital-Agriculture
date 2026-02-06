@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | AgriSmart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f4fff4;
+            color: #2e2e2e;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            background-color: #2e7d32;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: #ffffff;
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #c8e6c9;
+        }
+
+        /* SLIDER */
+        .slider {
+            width: 100%;
+            height: 450px;
+            background-image: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider h1 {
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            padding: 20px 40px;
+            font-size: 42px;
+            border-radius: 8px;
+        }
+
+        /* CONTENT */
+        .content {
+            padding: 60px 80px;
+            line-height: 1.9;
+        }
+
+        .content h2 {
+            font-size: 32px;
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 17px;
+            text-align: justify;
+        }
+
+        /* VIDEO */
+        .video-section {
+            padding: 40px 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 450px;
+            border-radius: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #1b5e20;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .content, .video-section {
+                padding: 30px 20px;
+            }
+
+            .slider h1 {
+                font-size: 28px;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>AgroVision</h2>
+        <ul>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="notification.html">Notification</a></li>
+        <li class="nav-item"><a class="nav-link" href="soilcrop.html">Soil & Crop</a></li>
+        <li class="nav-item"><a class="nav-link" href="scheme.html">Govt Scheme</a></li>
+        <li class="nav-item"><a class="nav-link" href="graph.html">Predicted Graph</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="other.html">Others</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- SLIDER -->
+    <div class="slider">
+        <h1>Empowering Farmers, Enriching Agriculture</h1>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <h2>About Agriculture & Farming</h2>
+        <p>
+            Agriculture is the backbone of human civilization and the foundation of global food security. It involves the cultivation of crops, the management of soil health, and the sustainable use of natural resources to produce food, fiber, and raw materials. Farming is not just an occupation; it is a way of life that connects humans directly to nature, seasons, and ecosystems. Healthy soil plays a vital role in determining crop productivity, as it supplies essential nutrients, water retention capacity, and microbial activity necessary for plant growth.
+            <br><br>
+            Modern agriculture combines traditional farming knowledge with advanced technology to improve crop yield, reduce environmental impact, and support farmers in making informed decisions. Understanding soil types, climate patterns, irrigation methods, and crop requirements helps farmers choose the right crops for the right land. Sustainable farming practices ensure long-term soil fertility, biodiversity conservation, and economic stability for farming communities. Through innovation, data-driven insights, and digital tools, agriculture is evolving to meet the growing food demands of the world while protecting the environment for future generations.
+            <br><br>
+            Modern agriculture combines traditional farming knowledge with advanced technology to improve crop yield, reduce environmental impact, and support farmers in making informed decisions. Understanding soil types, climate patterns, irrigation methods, and crop requirements helps farmers choose the right crops for the right land. Sustainable farming practices ensure long-term soil fertility, biodiversity conservation, and economic stability for farming communities. Through innovation, data-driven insights, and digital tools, agriculture is evolving to meet the growing food demands of the world while protecting the environment for future generations.
+            <br><br>
+            Modern agriculture combines traditional farming knowledge with advanced technology to improve crop yield, reduce environmental impact, and support farmers in making informed decisions. Understanding soil types, climate patterns, irrigation methods, and crop requirements helps farmers choose the right crops for the right land. Sustainable farming practices ensure long-term soil fertility, biodiversity conservation, and economic stability for farming communities. Through innovation, data-driven insights, and digital tools, agriculture is evolving to meet the growing food demands of the world while protecting the environment for future generations.
+        </p>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="video-section">
+        <iframe 
+            src="https://youtu.be/QAOKkIe3jFI?si=H4hYbwYtyybux-Z4"
+            title="Agriculture Overview"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 AgroVision | Smart Solutions for Sustainable Farming</p>
+    </footer>
+
+</body>
+</html>

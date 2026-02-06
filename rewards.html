@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rewards & Wallet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f5;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background-color: #2e7d32;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar h2 {
+            font-size: 22px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .container {
+            padding: 40px;
+        }
+
+        /* WALLET */
+        .wallet {
+            background: linear-gradient(135deg, #43a047, #2e7d32);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wallet h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .wallet .amount {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .withdraw-btn {
+            padding: 12px 26px;
+            font-size: 16px;
+            background-color: #ffffff;
+            color: #2e7d32;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .withdraw-btn:hover {
+            background-color: #e8f5e9;
+        }
+
+        /* TASKS */
+        .tasks-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+        .task-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .task-info h4 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .task-info p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .task-reward {
+            text-align: right;
+        }
+
+        .task-reward span {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2e7d32;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .task-reward button {
+            padding: 8px 16px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .task-reward button:hover {
+            background-color: #1b5e20;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 25px;
+            width: 320px;
+            border-radius: 10px;
+        }
+
+        .modal-content h3 {
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+
+        .modal-content label {
+            font-size: 14px;
+        }
+
+        .modal-content input,
+        .modal-content select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 15px 0;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .modal-buttons .confirm {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .modal-buttons .cancel {
+            background-color: #ccc;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .wallet {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .task-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .task-reward {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <h2>AgriSmart</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="soil.html">Soil Information</a></li>
+            <li><a href="guidance.html">Guidance</a></li>
+            <li><a href="rewards.html">Rewards</a></li>
+            <li><a href="scheme.html">Govt Scheme</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <!-- WALLET -->
+        <div class="wallet">
+            <div>
+                <h3>My Wallet Balance</h3>
+                <div class="amount">₹ 1,250</div>
+            </div>
+            <button class="withdraw-btn" onclick="openWithdraw()">Withdraw</button>
+        </div>
+
+        <!-- TASKS -->
+        <div class="tasks-title">Earn Rewards by Completing Tasks</div>
+
+        <div class="task-box">
+            <div class="task-info">
+                <h4>Daily App Login</h4>
+                <p>Login daily and stay updated with farming information.</p>
+            </div>
+            <div class="task-reward">
+                <span>+ ₹10</span>
+                <button>Earn Now</button>
+            </div>
+        </div>
+
+        <div class="task-box">
+            <div class="task-info">
+                <h4>Read Government Scheme</h4>
+                <p>Read about farmer welfare schemes and benefits.</p>
+            </div>
+            <div class="task-reward">
+                <span>+ ₹20</span>
+                <button>Earn Now</button>
+            </div>
+        </div>
+
+        <div class="task-box">
+            <div class="task-info">
+                <h4>Check Weather Report</h4>
+                <p>View daily weather updates for your region.</p>
+            </div>
+            <div class="task-reward">
+                <span>+ ₹15</span>
+                <button>Earn Now</button>
+            </div>
+        </div>
+
+        <div class="task-box">
+            <div class="task-info">
+                <h4>Soil Knowledge Quiz</h4>
+                <p>Answer questions related to soil and crops.</p>
+            </div>
+            <div class="task-reward">
+                <span>+ ₹50</span>
+                <button>Play & Earn</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- WITHDRAW MODAL -->
+    <div id="withdrawModal" class="modal">
+        <div class="modal-content">
+            <h3>Withdraw Money</h3>
+
+            <label>Enter Amount</label>
+            <input type="number" placeholder="Amount in ₹">
+
+            <label>Select Method</label>
+            <select>
+                <option>UPI</option>
+                <option>Bank Transfer</option>
+                <option>Wallet</option>
+            </select>
+
+            <div class="modal-buttons">
+                <button class="confirm">Withdraw</button>
+                <button class="cancel" onclick="closeWithdraw()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+        function openWithdraw() {
+            document.getElementById("withdrawModal").style.display = "flex";
+        }
+
+        function closeWithdraw() {
+            document.getElementById("withdrawModal").style.display = "none";
+        }
+    </script>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 AgriSmart | Empowering Farmers Digitally 🌱
+    </footer>
+
+</body>
+</html>

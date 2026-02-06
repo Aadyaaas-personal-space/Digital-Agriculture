@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Soil Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f4f6f5;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #2e7d32;
+            padding: 15px 40px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            font-size: 22px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTENT */
+        .main-container {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .main-container h2 {
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+
+        .soil-card {
+            display: flex;
+            gap: 25px;
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .soil-card img {
+            width: 260px;
+            height: 180px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .soil-info h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .soil-info p {
+            line-height: 1.6;
+            color: #444;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .soil-card {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .soil-card img {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <nav>
+        <h2>AgroVision</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="soil.html">Soil Information</a></li>
+            <li><a href="guidance.html">Guidance</a></li>
+            <li><a href="rewards.html">Rewards</a></li>
+            <li><a href="scheme.html">Govt Scheme</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-container">
+        <h2>Soil Types & Information</h2>
+
+        <div class="soil-card">
+            <img src="https://i0.wp.com/civilblog.org/wp-content/uploads/2015/11/Foundation-in-black-cotton-soil.jpg?fit=640%2C427&ssl=1" alt="Black Soil">
+            <div class="soil-info">
+                <h3>Black Soil (Regur Soil)</h3>
+                <p>
+                    Black soil is rich in clay and has excellent moisture-retaining capacity.
+                    It is highly fertile and suitable for crops like cotton, sugarcane, wheat,
+                    and oilseeds. This soil type is commonly found in Maharashtra, Gujarat,
+                    and Madhya Pradesh.
+                    <br><br>
+                    Black soil, also known as Regur soil or Black Cotton Soil, is one of the most important soil types in India. It is famous for its high moisture-retaining capacity and is especially suitable for cotton cultivation.
+                </p>
+            </div>
+        </div>
+
+        <div class="soil-card">
+            <img src="https://images.jdmagicbox.com/quickquotes/images_main/red-laterite-soil-8d7xtrqj.jpg" alt="Red Soil">
+            <div class="soil-info">
+                <h3>Red Soil</h3>
+                <p>
+                    Red soil is formed due to weathering of igneous rocks and contains iron,
+                    which gives it a red color. It is suitable for crops like millets, pulses,
+                    groundnut, and cotton with proper irrigation.
+                    <br><br>
+                    Red soil is one of the major soil types found in India. It gets its red colour due to the presence of iron oxide. This soil is generally light-textured, porous, and suitable for crops with proper irrigation and fertilizers.
+                </p>
+            </div>
+        </div>
+
+        <div class="soil-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRpxyHghJLFBtjNejdwgg3AyYNI7CeTrXuRw&s" alt="Alluvial Soil">
+            <div class="soil-info">
+                <h3>Alluvial Soil</h3>
+                <p>
+                    Alluvial soil is highly fertile and found along river plains. It supports
+                    crops such as rice, wheat, maize, sugarcane, and vegetables. This soil is
+                    common in northern and eastern parts of India.
+                    <br><br>
+                    Alluvial soil is the most widespread and agriculturally important soil in India. It is formed by the deposition of sediments brought by rivers, making it highly fertile and ideal for intensive farming.
+                </p>
+            </div>
+        </div>
+
+        <div class="soil-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRadYVL5MOOjg9ug2TFXuQIz6jPyypk3DqjOg&s" alt="Laterite Soil">
+            <div class="soil-info">
+                <h3>Laterite Soil</h3>
+                <p>
+                    Laterite soil is rich in iron and aluminum but poor in fertility. With
+                    proper manure and irrigation, it can support crops like tea, coffee,
+                    rubber, and cashew.
+                    <br><br>
+                    Laterite soil is a leached, acidic soil formed under high temperature and heavy rainfall conditions. The word laterite comes from the Latin word “later” meaning brick, as this soil hardens on exposure to air.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 AgroVision | Empowering Farmers with Technology
+    </footer>
+
+</body>
+</html>

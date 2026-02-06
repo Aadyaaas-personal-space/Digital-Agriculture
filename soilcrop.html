@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AgriSmart - Crop & Soil Info</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f9f4;
+        }
+
+        /* ================= NAVBAR ================= */
+        .navbar {
+            background-color: #2e7d32;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 6px 10px;
+            border-radius: 5px;
+        }
+
+        .nav-links li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        /* ================= MAIN CONTENT ================= */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        h2 {
+            color: #2e8b57;
+            text-align: center;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .weather {
+            background-color: #e6f5ea;
+        }
+
+        /* ================= FOOTER ================= */
+        .footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            margin-top: 40px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 65px;
+                right: 0;
+                background-color: #2e8b57;
+                flex-direction: column;
+                width: 200px;
+                display: none;
+            }
+
+            .nav-links li {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+    <div class="logo">AgroVision</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="notification.html">Notification</a></li>
+        <li class="nav-item"><a class="nav-link" href="soilcrop.html">Soil & Crop</a></li>
+        <li class="nav-item"><a class="nav-link" href="scheme.html">Govt Scheme</a></li>
+        <li class="nav-item"><a class="nav-link" href="graph.html">Predicted Graph</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="other.html">Others</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container">
+
+    <h2>Crop, Soil & Weather Information</h2>
+
+    <!-- Soil Selection -->
+    <div class="card">
+        <h3>Select Soil Type</h3>
+        <select onchange="soilSelect(this.value)">
+            <option value="">-- Select Soil --</option>
+            <option value="black">Black Soil</option>
+            <option value="red">Red Soil</option>
+            <option value="alluvial">Alluvial Soil</option>
+            <option value="laterite">Laterite Soil</option>
+        </select>
+        <div class="result" id="soilResult"></div>
+    </div>
+
+    <!-- Crop Selection -->
+    <div class="card">
+        <h3>Select Crop</h3>
+        <select onchange="cropSelect(this.value)">
+            <option value="">-- Select Crop --</option>
+            <option value="rice">Rice</option>
+            <option value="wheat">Wheat</option>
+            <option value="cotton">Cotton</option>
+            <option value="sugarcane">Sugarcane</option>
+        </select>
+        <div class="result" id="cropResult"></div>
+    </div>
+
+    <!-- Weather Info -->
+    <div class="card weather">
+        <h3>Current Weather</h3>
+        <p>🌤 Temperature: 28°C</p>
+        <p>💧 Humidity: 65%</p>
+        <p>🌧 Rainfall: Moderate</p>
+        <p>✅ Suitable Crops: Rice, Sugarcane</p>
+    </div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<div class="footer">
+    © 2026 AgroVision | All Rights Reserved
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+
+function soilSelect(soil) {
+    let result = "";
+    if (soil === "black") {
+        result = "Suitable Crops: Cotton, Sugarcane, Soybean";
+    } else if (soil === "red") {
+        result = "Suitable Crops: Groundnut, Millets, Pulses";
+    } else if (soil === "alluvial") {
+        result = "Suitable Crops: Rice, Wheat, Maize";
+    } else if (soil === "laterite") {
+        result = "Suitable Crops: Tea, Coffee, Cashew";
+    }
+    document.getElementById("soilResult").innerText = result;
+}
+
+function cropSelect(crop) {
+    let result = "";
+    if (crop === "rice") {
+        result = "Best Soil: Alluvial | Needs high water";
+    } else if (crop === "wheat") {
+        result = "Best Soil: Alluvial | Cool climate";
+    } else if (crop === "cotton") {
+        result = "Best Soil: Black | Warm climate";
+    } else if (crop === "sugarcane") {
+        result = "Best Soil: Black, Alluvial | High rainfall";
+    }
+    document.getElementById("cropResult").innerText = result;
+}
+</script>
+
+</body>
+</html>
